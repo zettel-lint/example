@@ -1,18 +1,12 @@
 {
   "name": "example-zettel-lint",
-  "version": "0.9.0",
+  "version": "0.9.2",
   "description": "Example repo demonstrating zettel linting",
-  "main": "./lib/zl.js",
-  "bin": {
-    "zettel-lint": "./lib/zl.js"
-  },
   "scripts": {
-    "start": "nodemon --watch 'src/**/*.ts' --exec ts-node src/zl.ts",
-    "create": "npm run build && npm run test",
-    "build": "tsc -p .",
-    "test": "sudo npm i -g && zettel-lint",
-    "refresh": "rm -rf ./node_modules ./package-lock.json && npm install",
-    "zl": "ts-node src/zl.ts"
+    "zl-references": "zettel-lint index --path . --ignore-dirs \"./node_modules/**\" --reference-file references.md --show-orphans",
+    "zl-import-trello": "zettel-lint import --verbose --source trello --output-folder . --path trello-board.json",
+    "zl": "zettel-lint --help",
+    "zl-version": "zettel-lint --version"
   },
   "repository": {
     "type": "git",
@@ -29,26 +23,8 @@
     "url": "https://github.com/zettel-lint/example/issues"
   },
   "homepage": "https://github.com/zettel-lint/example#readme",
-  "dependencies": {
-    "axios": "^0.19.2",
-    "chalk": "^4.0.0",
-    "clear": "^0.1.0",
-    "commander": "^5.1.0",
-    "figlet": "^1.4.0",
-    "fs": "0.0.1-security",
-    "glob": "^7.1.6",
-    "glob-promise": "^3.4.0",
-    "path": "^0.12.7",
-    "simple-markdown": "^0.7.2"
-  },
+  "dependencies": {},
   "devDependencies": {
-    "@types/clear": "^0.1.0",
-    "@types/figlet": "^1.2.0",
-    "@types/glob": "^7.1.1",
-    "@types/node": "^13.13.5",
-    "eslint": "^7.0.0",
-    "nodemon": "^2.0.3",
-    "ts-node": "^8.10.1",
-    "typescript": "^3.8.3"
+    "zettel-lint": "^0.9.2"
   }
 }
