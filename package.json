@@ -25,6 +25,6 @@
   "homepage": "https://github.com/zettel-lint/example#readme",
   "dependencies": {},
   "devDependencies": {
-    "zettel-lint": "^0.11.10"
+    "zettel-lint": "^0.13.12"
   }
 }
